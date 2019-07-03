@@ -14,7 +14,9 @@
     "format": "find src -name \"*.ts\" | xargs clang-format --style=file -i",
     "lint": "tslint -p .",
     "test": "npm run build && mocha \"test/**/*_test.js\"",
-    "test:unit": "mocha \"test/**/*_test.js\""
+    "test:unit": "mocha \"test/**/*_test.js\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@types/parse5": "^2.2.34",
@@ -22,7 +24,8 @@
     "jsonschema": "^1.1.1",
     "minimatch-all": "^1.1.0",
     "plylog": "^1.0.0",
-    "winston": "^3.0.0"
+    "winston": "^3.0.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "polymer-analyzer": "^3.0.1",
@@ -30,5 +33,6 @@
   },
   "peerDependencies": {
     "polymer-analyzer": "^3.0.1"
-  }
+  },
+  "snyk": true
 }
