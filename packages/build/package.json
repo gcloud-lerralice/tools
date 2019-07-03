@@ -17,7 +17,9 @@
     "test": "npm run build && npm run lint && mocha \"lib/test/**/*_test.js\"",
     "test:unit": "mocha \"lib/test/**/*_test.js\"",
     "test:watch": "tsc-then -- mocha \"lib/test/**/*_test.js\"",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
@@ -84,7 +86,8 @@
     "sw-precache": "^5.1.1",
     "uuid": "^3.2.1",
     "vinyl": "^1.2.0",
-    "vinyl-fs": "^2.4.4"
+    "vinyl-fs": "^2.4.4",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@types/fs-extra": "0.0.37",
@@ -98,5 +101,6 @@
     "strip-indent": "^2.0.0",
     "temp": "^0.8.3",
     "tsc-then": "^1.1.0"
-  }
+  },
+  "snyk": true
 }
