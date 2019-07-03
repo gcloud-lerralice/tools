@@ -17,7 +17,9 @@
   "scripts": {
     "format": "find scripts lib -name \"*.js\" | xargs clang-format --style=file -i",
     "postinstall": "node scripts/postinstall.js",
-    "test": "mocha"
+    "test": "mocha",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "main": "lib/plugin.js",
   "wct-plugin": {
@@ -66,7 +68,9 @@
     "request": "^2.85.0",
     "sauce-connect-launcher": "^1.0.0",
     "temp": "^0.8.1",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "snyk": "^1.189.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "snyk": true
 }
