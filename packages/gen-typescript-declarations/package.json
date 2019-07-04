@@ -35,7 +35,8 @@
     "polymer-analyzer": "^3.0.2",
     "source-map-support": "^0.5.9",
     "typescript": "^3.0.1",
-    "vscode-uri": "^1.0.3"
+    "vscode-uri": "^1.0.3",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "bower": "^1.8.2",
@@ -54,6 +55,9 @@
     "test:unit": "npm run lint && npm run test:setup && npm run build && mocha",
     "test:watch": "tsc-then -- mocha --color",
     "test:setup": "bash scripts/setup-fixtures.sh",
-    "update-goldens": "npm run test:setup && npm run build && scripts/update-goldens.js"
-  }
+    "update-goldens": "npm run test:setup && npm run build && scripts/update-goldens.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
