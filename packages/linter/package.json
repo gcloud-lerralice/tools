@@ -23,7 +23,8 @@
     "shady-css-parser": "^0.1.0",
     "stable": "^0.1.6",
     "strip-indent": "^2.0.0",
-    "validate-element-name": "^2.1.1"
+    "validate-element-name": "^2.1.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@polymer/tools-common": "^2.0.0",
@@ -45,7 +46,9 @@
     "test": "npm run build && mocha \"lib/test/**/*_test.js\" && npm run lint",
     "test:unit": "mocha \"lib/test/**/*_test.js\"",
     "test:watch": "tsc-then -- mocha \"lib/test/**/*_test.js\"",
-    "run-on-polymer": "npm run build && (cd test/integration && bower install --silent) && INTEGRATION_TEST=true mocha lib/test/integration_test.js"
+    "run-on-polymer": "npm run build && (cd test/integration && bower install --silent) && INTEGRATION_TEST=true mocha lib/test/integration_test.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "polymer",
@@ -54,5 +57,6 @@
   ],
   "engines": {
     "node": ">=8"
-  }
+  },
+  "snyk": true
 }
