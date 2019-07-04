@@ -26,12 +26,18 @@
     "gulp-tslint": "^8.0.0",
     "gulp-typescript": "^3.0.0",
     "merge-stream": "^1.0.0",
-    "run-sequence": "^1.0.0"
+    "run-sequence": "^1.0.0",
+    "snyk": "^1.189.0"
   },
   "peerDependencies": {
     "gulp": "^4.0.0"
   },
   "devDependencies": {
     "gulp": "^4.0.0"
-  }
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
