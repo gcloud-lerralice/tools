@@ -29,7 +29,9 @@
     "benchmark": "npm run build && npm run initBench && node --expose-gc lib/perf/parse-all-benchmark.js",
     "test:unit": "mocha \"lib/test/**/*_test.js\"",
     "test:watch": "tsc-then -- mocha \"lib/test/**/*_test.js\"",
-    "prepublishOnly": "tsc && npm test"
+    "prepublishOnly": "tsc && npm test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "bower": "^1.7.9",
@@ -82,9 +84,11 @@
     "stable": "^0.1.6",
     "strip-indent": "^2.0.0",
     "vscode-uri": "^1.0.1",
-    "whatwg-url": "^6.4.0"
+    "whatwg-url": "^6.4.0",
+    "snyk": "^1.189.0"
   },
   "engines": {
     "node": ">=8"
-  }
+  },
+  "snyk": true
 }
