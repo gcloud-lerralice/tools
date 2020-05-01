@@ -28,7 +28,9 @@
     "test": "npm run test:fast && npm run lint",
     "test:full": "npm run build && bash test/run-mocha.sh && npm run lint",
     "test:fast": "npm run build && bash test/run-mocha.sh unit",
-    "test:watch": "tsc-then -- bash test/run-mocha.sh unit"
+    "test:watch": "tsc-then -- bash test/run-mocha.sh unit",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -68,12 +70,14 @@
     "semver": "^5.3.0",
     "source-map-support": "^0.4.15",
     "spdx-license-list": "^3.0.1",
-    "tslib": "^1.7.1"
+    "tslib": "^1.7.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/diff": "^3.2.0",
     "diff": "^3.3.0",
     "dir-compare": "^1.4.0",
     "tsc-then": "^1.1.0"
-  }
+  },
+  "snyk": true
 }
