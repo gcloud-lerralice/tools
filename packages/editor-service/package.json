@@ -18,7 +18,9 @@
     "lint": "tslint -p .",
     "test": "npm run clean && npm run build && mocha \"lib/test/**/*_test.js\" && npm run lint",
     "test:unit": "mocha \"lib/test/**/*_test.js\"",
-    "test:watch": "tsc-then -- mocha \"lib/test/**/*_test.js\""
+    "test:watch": "tsc-then -- mocha \"lib/test/**/*_test.js\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "@types/clone": "^0.1.30",
@@ -47,9 +49,11 @@
     "split": "^1.0.0",
     "vscode-languageserver": "^4.1.1",
     "vscode-uri": "^1.0.0",
-    "winston-transport": "^4.2.0"
+    "winston-transport": "^4.2.0",
+    "snyk": "^1.316.1"
   },
   "engines": {
     "node": ">=8"
-  }
+  },
+  "snyk": true
 }
