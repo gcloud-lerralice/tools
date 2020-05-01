@@ -18,7 +18,9 @@
     "format": "find src scripts -name \"*.[jt]s\" | xargs clang-format --style=file -i",
     "lint": "tslint -p .",
     "prepublishOnly": "tsc",
-    "postinstall": "node scripts/postinstall.js"
+    "postinstall": "node scripts/postinstall.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "wct-plugin": {
     "cli-options": {
@@ -52,9 +54,11 @@
     "freeport": "^1.0.4",
     "launchpad": "^0.7.0",
     "selenium-standalone": "^6.7.0",
-    "which": "^1.0.8"
+    "which": "^1.0.8",
+    "snyk": "^1.316.1"
   },
   "engines": {
     "node": ">=6.0"
-  }
+  },
+  "snyk": true
 }
